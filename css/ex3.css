@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    padding: 0;
+    margin: 0;
+    font-size: 1.2rem;
+    color:rgba(87, 117, 144, 1);
+
+    font-family: "Roboto", sans-serif;
+}
+
+::selection{
+    background: rgba(87, 117, 144, 1);
+    color: rgba(255, 255, 255, 1);
+}
+
+a{
+    text-decoration: none;
+    color: rgba(87, 117, 144, 1);
+    display: inline-block;
+}
+
+a:hover{
+    color: rgba(87, 117, 144, 1);
+}
+
+/*header*/
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: auto;
+    z-index: 200000;
+}
+
+/*menu*/
+.menu{
+    width: 80%;
+    margin: 10px auto;
+    display: flex; 
+}
+
+/*logo*/
+.logo{
+    flex: 0 0 120px;
+}
+
+.logo img{
+    width: 100%;
+    margin: auto;
+    background: rgba(255, 255, 255, .5);
+	border-radius: 50%;
+}
+
+/*nav*/
+nav{
+    flex: 1;
+    text-align: right;
+}
+
+nav a{
+    padding: 50px;
+    font-weight: bold;
+}
+
+nav a:hover{
+    text-decoration: underline;
+}
+
+/*hero*/
+.hero{
+    position: relative;   
+    width: 100%;
+    height: 90vh;
+    background:rgba(87, 117, 144, .2);
+}
+
+.hero img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    object-position:bottom;
+}
+
+.hero h1{
+    position: absolute;
+    top:20%;
+	left:50%;
+	transform: translate(-50%, -50%);
+
+    font-size: 150px;
+    color: rgba(87, 117, 144, 1);
+}
+
+/*section*/
+section{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+section h1{
+    flex: 0 0 100%;
+    color:rgba(87, 117, 144, 1);
+    text-align: center;
+}
+
+/*card*/
+.card{
+    flex: 0 0 calc((100% - 10px *3)/4);
+	text-align:center;
+	cursor:pointer;
+}
+
+.card img{
+	width:80%;
+	border-radius:50%;
+	border:solid 1px rgba(87, 117, 144, 1);
+    
+	-ms-transform: rotate(0deg); /* IE 9 */
+    -webkit-transform: rotate(0deg); /* Safari */
+    transform: rotate(0deg); /* Standard syntax */
+	
+	transition: transform 1.5s;
+	-webkit-transition: transform 1.5s;
+}
+
+.card:hover img{
+	-ms-transform: rotate(-20deg); /* IE 9 */
+    -webkit-transform: rotate(-20deg); /* Safari */
+    transform: rotate(-20deg); /* Standard syntax */
+}
+
+/*article*/
+article{
+    flex: 0 0 100%;
+	margin: auto;
+    margin-bottom: 30px;
+    border:solid 4px rgba(87, 117, 144, 1);
+    border-radius: 50px;
+    box-sizing: border-box;
+
+    display: flex; /* 自己本身也是flex*/
+}
+
+section > a:nth-of-type(2n) article{
+    flex-direction: row-reverse; /* 偶數欄 article 圖文位置反轉*/
+}
+
+article:hover{
+    border:solid 8px rgba(87, 117, 144, 1);
+    background:rgba(87, 117, 144, .2);
+}
+
+.a_left{
+    flex: 1;
+}
+
+.a_left img{
+	float:left;
+    width: 100%;
+    height:100%;
+	object-fit: cover;
+    object-position: bottom;
+}
+
+.a_right{
+    flex: 1;
+	padding: 4%;
+	box-sizing:border-box;
+	color:rgba(87, 117, 144, 1);
+	text-align:left;
+    line-height: 2rem;
+}
+
+.a_right h2{
+    font-size: 2.5rem;
+}
+
+/*footer*/
+footer{
+    clear: both;
+    width: 100%;
+    padding: 50px 0px;
+    text-align: center;
+}
+
+/*for tablets*/
+@media only screen and (max-width: 1200px) {
+}
+
+/*for mobile*/
+@media only screen and (max-width: 768px) {
+    body{
+        font-size: 1.3rem;
+    }
+
+    /* menu*/
+    .menu{
+        margin: 20px auto;
+        flex-direction: column; /* 垂直排版*/
+    }
+
+    /* logo*/
+    .logo{
+    text-align: center;
+    }
+    .logo img{
+        width: 30%;
+        margin: auto;
+    }
+
+    /* nav*/
+    nav{
+        text-align: center;
+    }
+    nav a{
+        padding: 10px;
+    }
+
+    /* hero*/
+    .hero{
+        height: 60vh;
+    }
+
+    .hero h1{
+        top: 40%;
+        font-size: 80px;
+    }
+
+    .card{
+        flex: 0 0 calc((100% - 10px *1)/2)
+    }
+
+    /*article*/
+    article{
+        flex-direction: column;
+    }
+
+    section > a:nth-of-type(2n) article{
+        flex-direction: column;
+    }
+
+    .a_right{
+    padding: 6%;
+    }
+
+    .a_right h2{
+    font-size: 2rem;
+    }
+
+}
